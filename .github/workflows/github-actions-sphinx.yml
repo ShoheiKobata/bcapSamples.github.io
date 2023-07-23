@@ -1,0 +1,43 @@
+name: Github Actions Sphinx Build and Publish
+run-name: ${{ github.actor }} is running GitHub Actions
+on: [push]
+jobs:
+  Build-Document:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Python 3.9
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - run: python --version
+      - run: pip install pipenv
+      - run: java --version      
+      - name: Setup Graphviz
+        uses: ts-graphviz/setup-graphviz@v1
+      # In the steps below this you can use Graphviz dot command.      
+      - uses: actions/checkout@v3      
+      - run: cd docs && pipenv install
+      - name: Build Document
+        run: cd docs && pipenv run sphinx-build -b html source build
+      - run: cd docs && ls -alt
+      - name: Archive artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./docs/build
+
+  Deploy-Document:
+    needs: Build-Document
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest      
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
