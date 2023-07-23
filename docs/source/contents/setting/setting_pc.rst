@@ -16,77 +16,62 @@ RC9,COBOTTA Proの場合
 aaaaa
 
 
-test
+
+Component Diagram
+------------------
 
 .. uml::
 
+  @startuml
+  title sample component diagram
+  package Server {
+    node instance
+    node gateway
+    instance -- gateway
+  }
+  package Local {
+    node PC {
+      node Browser
+    }
+  }
+  Browser -u- gateway
+  
+  @enduml
 
-    A -> B: request
-    return response
 
-
-test2
-
+Activity Diagram
+------------------
 
 .. uml::
+  
+  @startuml
+  title sample activity diagram
+  start
+  :write document;
+  if (any update exists?) then (yes)
+  :commit;
+  else (no)
+  :do nothing;
+  endif
+  :push;
+  end
+  @enduml
 
+Gantt Diagram
+-------------------
 
-    @startuml
+.. uml::
+  
+  @startuml
+  title sample gantt diagram
+  Project starts 2022-10-10
+  2022/10/14 is colored in salmon
+  [setup repo] starts 2022-10-15 and lasts 5 days
 
+  then [write docs] lasts 10 days
+  note bottom
+  note for write docs
+  end note
 
-    node ノード1 {
-    node ノード2
-    }
-
-    rectangle 四角形1 {
-    rectangle 四角形2
-    }
-
-    frame フレーム1 {
-    frame フレーム2
-    }
-
-    component コンポーネント1 {
-    component コンポーネント2
-    }
-
-    artifact アーティファクト1 {
-    artifact アーティファクト2
-    }
-
-    cloud クラウド1 {
-    cloud クラウド2
-    }
-
-    database データベース1 {
-    database データベース2
-    }
-
-    folder フォルダ1 {
-    folder フォルダ2
-    }
-
-    file ファイル1 {
-    file ファイル2
-    }
-
-    package パッケージ1 {
-    package パッケージ2
-    }
-
-    queue キュー1 {
-    queue キュー2
-    }
-
-    ノード1 -[hidden]-> 四角形1
-    四角形1 -[hidden]-> フレーム1
-    コンポーネント1 -[hidden]-> アーティファクト1
-    アーティファクト1 -[hidden]-> クラウド1
-    データベース1 -[hidden]-> フォルダ1
-    フォルダ1 -[hidden]-> ファイル1
-    パッケージ1 -[hidden]-> キュー1
-
-    @enduml
-
-
-end 
+  then [publish docs] lasts 10 days
+  @enduml
