@@ -23,8 +23,7 @@ extensions = [
 ]
 
 plantuml = 'java -jar %s' % os.path.join(os.path.dirname(__file__), "../utils", "plantuml" , "plantuml.jar")
-plantuml_output_format = 'svg'
-plantuml_syntax_error_image = True
+
 templates_path = ['_templates']
 exclude_patterns = []
 
