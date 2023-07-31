@@ -1,0 +1,14 @@
+'!TITLE "サンプルプログラム1 ロボットが動作します"
+
+Sub Main
+	TakeArm Keep = 0
+    Motor on
+    ExtSpeed 1
+
+    Move P,@P J(  0, 0, 90, 0, 90,  0)
+    Move P,@P J( 10,-5, 90, 0, 80, 10)
+    Move P,@P J(-10, 5, 90, 0,100,-10)
+    Move P,@P J(  0, 0, 90, 0, 90,  0)
+
+
+End Sub

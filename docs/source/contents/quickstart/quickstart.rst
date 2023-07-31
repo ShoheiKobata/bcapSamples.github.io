@@ -1,9 +1,10 @@
 ===================================
-Quick Start Enviroment
+Quick Start
 ===================================
 
-GitHub上のリポジトリプログラムを使用し、ロボットコントローラへアクセスするための使用環境を説明します。
+GitHub上のリポジトリプログラムを使用し、ロボットコントローラへアクセスする手順を説明します。
 
+------
 
 使用環境
 ===============================
@@ -12,15 +13,19 @@ GitHub上のリポジトリプログラムを使用し、ロボットコント�
 
 PC
 -----------------------
-OS : windows , Mac , Linux
+
+OS : windows
+
 
 言語
 -----------------------
+
 Python
+
 
 ロボットコントローラ
 -----------------------
-RC8,RC8A,COBOTTA,RC9,COBOTTA Pro
+RC8,RC8A,COBOTTA
 
 
 ネットワーク設定
@@ -31,23 +36,33 @@ PC ---(有線LAN)--- RC
 - PC : 192.168.0.2
 - RC8: 192.168.0.1 (default)
 
+------
 
 準備
 ===============================
 
 bcapを使用したサンプルプログラムとPC環境準備、ロボットコントローラの準備の手順です。
 
-ロボットコントローラの準備
-----------------------------------------------
+PCとロボットコントローラをEthernetケーブルで接続してください。
 
-1. IPアドレスを設定する
-2. 
 
+ロボットコントローラの準備 IPアドレスを設定する
+------------------------------------------------
+
+ロボットコントローラのティーチングペンダントからロボットコントローラのIPアドレスを設定します。
+(DENSO ROBOT USER MANUALS  `ID:1783 <https://www.fa-manuals.denso-wave.com/jp/usermanuals/001783/>`_ )
+ 
+操作経路：[F6 設定] - [F5 通信と起動権] - [F2 ネットワークと通信権]
+
+IPアドレスを 192.168.0.2 に設定します。
+
+img
 
 サンプルプログラムをGitHubから入手する
 ----------------------------------------------
 
 ShoheiKobataのgithubからpythonサンプルのリポジトリを取得する
+
 
 .. code-block:: bash
 
@@ -63,10 +78,14 @@ ShoheiKobataのgithubからpythonサンプルのリポジトリを取得する
 
 .. code-block:: bash
 
-    cd cd orin_bcap_python_samples/SimpleSamples
+    cd orin_bcap_python_samples/SimpleSamples
     python 01_00_ReadWrite.py
 
 ロボットコントローラのグローバル変数が書く変わっていることを確認してください。
+ティーチングペンダントでグローバル変数を確認する方法
+(DENSO ROBOT USER MANUALS  `ID:1761 <https://www.fa-manuals.denso-wave.com/jp/usermanuals/001761/>`_ )
+
+基本画面 - [F3 変数]
 
 .. code-block:: python
 

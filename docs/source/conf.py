@@ -11,14 +11,12 @@ import os
 project = 'bcap_sample'
 copyright = '2023, densowave'
 author = 'densowave'
+html_style = "css/my_theme.css"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
-    'sphinx.ext.autodoc',
-    'sphinx.ext.napoleon',
-    'sphinx.ext.githubpages',
     'sphinxcontrib.plantuml'
 ]
 

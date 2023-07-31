@@ -6,21 +6,32 @@
 bcap sample 説明
 =======================================
 
+| b-capの使用方法に関して説明します。
+| b-capに関する説明と各開発言語での使用方法を説明しています。
+| 開発言語によって準備されているサンプルライブラリ、コマンドが若干異なります。
+| 詳細は各開発言語ページを参照ください。
+
+
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: 目次:
    :numbered:
+   :includehidden:
 
    /contents/quickstart/quickstart
-   /contents/setting/setting_pc
-   /contents/setting/setting_rc
+   /contents/setting/setting
+   /contents/about_bcap/overview
+   /contents/about_bcap/aboutorin
+   /contents/about_bcap/bcap_vs_orin
+   /contents/about_bcap/bcapslavemove
+   /contents/about_bcap/references
+   /contents/python/python
 
 
+..
+   インデックスとテーブル
+   ======================
 
-
-インデックスとテーブル
-======================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   * :ref:`genindex`
+   * :ref:`modindex`
+   * :ref:`search`
