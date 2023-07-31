@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4. ORiNについて &mdash; bcap_sample  ドキュメント</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="検索" href="../../search.html" />
+    <link rel="next" title="5. b-CAPとORiNの比較" href="bcap_vs_orin.html" />
+    <link rel="prev" title="3. b-capについて" href="overview.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            bcap_sample
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">目次:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/quickstart.html">1. Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setting/setting.html">2. Setting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">3. b-capについて</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. ORiNについて</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">4.1. ORiNとは</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">4.2. 特徴</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bcap_vs_orin.html">5. b-CAPとORiNの比較</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bcapslavemove.html">6. b-cap slave move</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">7. 参考ドキュメント</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/python.html">8. python</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">bcap_sample</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4. </span>ORiNについて</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/contents/about_bcap/aboutorin.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="orin">
+<h1><span class="section-number">4. </span>ORiNについて<a class="headerlink" href="#orin" title="この見出しへのパーマリンク"></a></h1>
+<p>ORiN : Open Resource interface for the Network</p>
+<section id="id1">
+<h2><span class="section-number">4.1. </span>ORiNとは<a class="headerlink" href="#id1" title="この見出しへのパーマリンク"></a></h2>
+<p>ORiN協議会により制定された工場ITシステムのための標準ミドルウェア仕様の総称.
+このORiNを利用することにより,メーカや機種に依存しないアプリケーションを開発することができるようになります.</p>
+<p>詳細はORiN協議会のページを参照ください。
+<a class="reference external" href="https://www.orin.jp/">https://www.orin.jp/</a></p>
+</section>
+<section id="id2">
+<h2><span class="section-number">4.2. </span>特徴<a class="headerlink" href="#id2" title="この見出しへのパーマリンク"></a></h2>
+<p>様々なデバイスに接続のお作法を知らなくても接続、制御、情報の取得が可能になります。
+同じ系統のデバイス(バージョン違い,後継機など)への接続の場合、プロバイダ名の変更のみで接続先の対応が可能になります。</p>
+<p>例: RC8への接続の場合</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">win32com.client</span>
+<span class="n">caoEng</span> <span class="o">=</span> <span class="n">win32com</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">Dispatch</span><span class="p">(</span><span class="s2">&quot;CAO.CaoEngine&quot;</span><span class="p">)</span>
+<span class="n">caoCtrl</span> <span class="o">=</span> <span class="n">caoEng</span><span class="o">.</span><span class="n">Workspaces</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">AddController</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;CaoProv.DENSO.RC8&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;Server=192.168.0.1&quot;</span><span class="p">)</span>
+<span class="n">VarI</span> <span class="o">=</span> <span class="n">caoCtrl</span><span class="o">.</span><span class="n">AddVariable</span><span class="p">(</span><span class="s2">&quot;I1&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I[1]の現在の値は&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">VarI</span><span class="o">.</span><span class="n">Value</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>例: RC9への接続の場合</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">win32com.client</span>
+<span class="n">caoEng</span> <span class="o">=</span> <span class="n">win32com</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">Dispatch</span><span class="p">(</span><span class="s2">&quot;CAO.CaoEngine&quot;</span><span class="p">)</span>
+<span class="n">caoCtrl</span> <span class="o">=</span> <span class="n">caoEng</span><span class="o">.</span><span class="n">Workspaces</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">AddController</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;CaoProv.DENSO.RC9&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;Server=192.168.0.1&quot;</span><span class="p">)</span>
+<span class="n">VarI</span> <span class="o">=</span> <span class="n">caoCtrl</span><span class="o">.</span><span class="n">AddVariable</span><span class="p">(</span><span class="s2">&quot;I1&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I[1]の現在の値は&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">VarI</span><span class="o">.</span><span class="n">Value</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>ORiNを使用する場合,クライアントアプリケーションはデバイスを意識せず,ORiNのプロバイダに関する
+プログラミングのお作法で通信が可能になります。</p>
+<p><a class="reference external" href="https://www.orin.jp/images/merit/reduction_fig.png">https://www.orin.jp/images/merit/reduction_fig.png</a></p>
+<p>これを可能にしているのはCAOのオブジェクト構造です。
+同じ系統の機器同士では同じオブジェクト内に似たような関数をひとまとめにしています。</p>
+<p class="plantuml">
+<img src="../../_images/plantuml-f49ef409bb38c4f6d35c2e72f4a581e3852d5c48.png" alt="&#64;startuml
+title CAOAのオブジェクト構造
+package CAO_Engine {
+    class CAOEngine {
+    {static} Collection CaoWorkSpaces
+    }
+
+    class CAOworkspace {
+    {static} Collection CaoControllers
+    }
+
+    class CaoController {
+    {static} Collection CaoVariables
+    {static} Collection CaoFiles
+    {static} Collection CaoTasks
+    {static} Collection CaoRobots
+    {static} Collection CaoExtensions
+    --
+    method AddVariable
+    method AddFile
+    method AddTask
+    method AddRobot
+    method AddExtension
+    --
+    }
+
+    class CaoVariable{
+    {method} getvalue
+    {method} putvalue
+    {method} getid
+    {method} putid
+    }
+    class CaoFile{
+    {method} getvalue
+    {method} putvalue
+    {method} getname
+    {method} putname
+    }
+    class CaoTask{
+    {method} start
+    {method} stop
+    {method} getname
+    {method} putname
+    }
+    class CaoRobot{
+    {method} move
+    {method} execute
+    {method} getname
+    {method} putname
+    }
+    class CaoExtension{
+    {method} execute
+    }
+}
+
+package CAP_Provider{
+    class CAPProvider{
+    }
+    class CaoProvController{
+    }
+    class CaoProvVariavle{
+    }
+    class CaoProvFile{
+    }
+    class CaoProvTask{
+    }
+    class CaoProvRobot{
+    }
+    class CaoProvExtension{
+    }
+}
+
+CAOEngine &lt;-- CAOworkspace
+CAOworkspace &lt;-- CaoController
+CaoController &lt;-- CaoVariable
+CaoController &lt;-- CaoFile
+CaoController &lt;-- CaoTask
+CaoController &lt;-- CaoRobot
+CaoController &lt;-- CaoExtension
+CaoVariable -[hidden]- CaoFile
+CaoFile -[hidden]- CaoTask
+CaoTask -[hidden]- CaoRobot
+CaoRobot -[hidden]- CaoExtension
+
+CAO_Engine -right- CAP_Provider
+
+CAPProvider &lt;-- CaoProvController
+CaoProvController &lt;-- CaoProvVariavle
+CaoProvController &lt;-- CaoProvFile
+CaoProvController &lt;-- CaoProvTask
+CaoProvController &lt;-- CaoProvRobot
+CaoProvController &lt;-- CaoProvExtension
+
+CaoProvController -[hidden]- CaoProvVariavle
+CaoProvVariavle -[hidden]- CaoProvFile
+CaoProvFile -[hidden]- CaoProvTask
+CaoProvTask -[hidden]- CaoProvRobot
+CaoProvRobot -[hidden]- CaoProvExtension
+
+CaoController --&gt; CaoProvController
+CaoVariable --&gt; CaoProvVariavle
+CaoFile --&gt; CaoProvFile
+CaoTask --&gt; CaoProvTask
+CaoRobot --&gt; CaoProvRobot
+CaoExtension --&gt; CaoProvExtension
+
+&#64;enduml"/>
+</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="overview.html" class="btn btn-neutral float-left" title="3. b-capについて" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="bcap_vs_orin.html" class="btn btn-neutral float-right" title="5. b-CAPとORiNの比較" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, densowave.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

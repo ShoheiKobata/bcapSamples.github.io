@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3. b-capについて &mdash; bcap_sample  ドキュメント</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="検索" href="../../search.html" />
+    <link rel="next" title="4. ORiNについて" href="aboutorin.html" />
+    <link rel="prev" title="2. Setting" href="../setting/setting.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            bcap_sample
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">目次:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/quickstart.html">1. Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setting/setting.html">2. Setting</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. b-capについて</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">3.1. b-capとは</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cap">3.1.1. CAPとは</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">3.1.2. システム構成図</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">3.2. b-CAPライブラリについて</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aboutorin.html">4. ORiNについて</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bcap_vs_orin.html">5. b-CAPとORiNの比較</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bcapslavemove.html">6. b-cap slave move</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">7. 参考ドキュメント</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/python.html">8. python</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">bcap_sample</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">3. </span>b-capについて</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/contents/about_bcap/overview.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="b-cap">
+<h1><span class="section-number">3. </span>b-capについて<a class="headerlink" href="#b-cap" title="この見出しへのパーマリンク"></a></h1>
+<section id="id1">
+<h2><span class="section-number">3.1. </span>b-capとは<a class="headerlink" href="#id1" title="この見出しへのパーマリンク"></a></h2>
+<p>b-CAPは,CAPの概念を踏襲しつつ,通信速度の向上を狙ったプロトコルである,
+これにより,b-CAPはCAPファミリと同様な以下の特徴を持っている.
+- CAOプロバイダのオブジェクトモデルと同様なサービス構造
+- オブジェクトIDで対象オブジェクトを指定しての関数呼び出し
+- サーバからのイベントをポーリングで実現</p>
+<section id="cap">
+<h3><span class="section-number">3.1.1. </span>CAPとは<a class="headerlink" href="#cap" title="この見出しへのパーマリンク"></a></h3>
+<p>CAP とは,Controller Access Protocol の略で,インターネット経由で CAO プロバイダにアクセスするための
+「インターネット向け通信プロトコル」です.CAOエンジンを利用して,リモートのCAOプロバイダにアクセスするためには DCOM を利用していますが,
+DCOM はセキュリティ上の問題があるために,インターネットを介したアクセスは実質上不可能です.そこで,この問題を解決するために ORiN2 では CAP を開発しました.</p>
+<p>CAP は,SOAP(Simple Object Access Protocol)を使用して,インターネット経由でオブジェクト間のリモート
+アクセスを実現するためのプロトコルです.ORiN2 SDK では,CAP プロバイダを提供することにより,CAP の仕様に従ったメッセージを作成,送信することができます.
+これにより,HTTP で接続可能な環境であれば,容易にインターネットを介してリモートのプロバイダに接続することが可能となります</p>
+</section>
+<section id="id2">
+<h3><span class="section-number">3.1.2. </span>システム構成図<a class="headerlink" href="#id2" title="この見出しへのパーマリンク"></a></h3>
+<p>b-CAPプロトコルでの通信を使用してCAPリスナーが動作しているシステム(PC or RC8)へアクセスし、そのシステム内のプロバイダを使用する。
+あるいはそのシステムの関数や変数を実行することができる。</p>
+<p class="plantuml">
+<img src="../../_images/plantuml-3542a4b50af1107855410ef65c000b41bf1ab8d3.png" alt="&#64;startuml
+title 概念図
+package BcapClientApplication {
+  node BcapClient
+}
+package Machine {
+  node Controller {
+    node BcapServer
+  }
+}
+package CAOApplication {
+  node CAOClient
+  node CAOEngine
+  node BcapProvider
+  CAOClient -- CAOEngine
+  CAOEngine -- BcapProvider
+}
+package RobotController {
+  node BcapListener
+  node CAO
+  Node VRCProvider
+  node RobotCtrl
+  BcapListener -- CAO
+  CAO -- VRCProvider
+  VRCProvider -- RobotCtrl
+}
+
+
+BcapClient -d-&gt; BcapServer:TCP/IP
+BcapProvider -d-&gt; BcapListener:TCP/IP
+BcapClient -d-&gt; BcapListener:TCP/IP
+BcapProvider -d-&gt; BcapServer:TCP/IP
+
+
+
+&#64;enduml"/>
+</p>
+</section>
+</section>
+<section id="id3">
+<h2><span class="section-number">3.2. </span>b-CAPライブラリについて<a class="headerlink" href="#id3" title="この見出しへのパーマリンク"></a></h2>
+<p>デンソーウェーブ作成の <a class="reference external" href="https://github.com/DENSORobot/orin_bcap">b-capライブラリサンプル</a> を活用することが可能です。</p>
+<p>C , C# , Java , python のライブラリサンプルを提供しています。</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../setting/setting.html" class="btn btn-neutral float-left" title="2. Setting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="aboutorin.html" class="btn btn-neutral float-right" title="4. ORiNについて" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, densowave.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

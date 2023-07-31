@@ -8,4 +8,6 @@ vendor/
 .mypy_cache
 
 .vscode
-build/
+
+
+.github/
