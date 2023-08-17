@@ -25,6 +25,7 @@ bcap sample 説明
    /contents/about_bcap/bcap_vs_orin
    /contents/about_bcap/bcapslavemove
    /contents/about_bcap/references
+   /contents/simulation/simulation
    /contents/python/python
 
 

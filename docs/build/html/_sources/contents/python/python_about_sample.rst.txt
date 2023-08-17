@@ -5,7 +5,6 @@
 サンプルプログラム内容を解説します. 
 
 
-------
 
 接続処理
 ------------------
@@ -52,8 +51,6 @@ VRCプロバイダ = RC8プロバイダ です.  RC9やCOBOTTAPROへ接続する
     controller_connect を :code:`@IfNotMember` オプション付きで実施した場合, 以降の robot object , task object , variable object , file object 
     を追加するコマンドにもすべて :code:`@IfNotMember`  オプションを付与すると良い
 
-------
-
 
 終了処理
 ------------------------
@@ -75,8 +72,6 @@ VRCプロバイダ = RC8プロバイダ です.  RC9やCOBOTTAPROへ接続する
     | 接続を Controller -> Robot -> robot_variable とした場合, 
     | 切断は robot_variable -> Robot -> Controller の順で実施します. 
 
-
-------
 
 
 変数の読み書き
@@ -155,9 +150,6 @@ F,D,P,S の値の読み書きを実施しています.
 :code:`m_bcapclient.variable_putid(IHandl, IDnum)` でアクセスする変数の番号を変更しながら,  :code:`m_bcapclient.variable_getvalue(IHandl)` で値を取得しています. 
 
 IDの変更は変数オブジェクトを定義する際に :code:`m_bcapclient.controller_getvariable(hCtrl, "I*", "")` のように **ワイルドカードで指定する必要** があります. 
-
-
-------
 
 
 タスクの制御
@@ -243,8 +235,6 @@ ESCキーが入力された時,  :code:`m_bcapclient.task_stop(HTask, mode, "")`
 :4: 初期化停止
 
 となります.  停止の種類の詳細についてはロボットマニュアルを参照ください. ( `ID:1709 <https://www.fa-manuals.denso-wave.com/jp/usermanuals/001709/>`_ )
-
-------
 
 
 動作コマンド発行
@@ -333,8 +323,6 @@ Moveコマンドの書式
 
     例: ``[1, "P", "@P"]`` , ``[[0, 0, 90, 0, 90, 0], "J", "@E"]`` .
 
-------
-
 
 b-cap slave move
 ------------------------
@@ -352,11 +340,11 @@ bcapslaveの制御手順概要
 .. uml::
 
     @startuml
-    title b-CAPSlaveMove操作フロー
+    title b-CAPSlaveMove operation flow
 
     start
 
-    :接続処理;
+    :Connect;
 
     note right
     BCAPClient
@@ -364,7 +352,7 @@ bcapslaveの制御手順概要
     BCAPClient.controller_connect
     end note
 
-    :通常制御;
+    :Controll;
 
     note right
     Motor ON
@@ -372,7 +360,7 @@ bcapslaveの制御手順概要
     Move , Move ...
     end note
     
-    :slave mode 設定,開始;
+    :slave mode setting,start;
 
     note right
     slvSendFormat
@@ -389,13 +377,13 @@ bcapslaveの制御手順概要
     slvMove
     end note
 
-    :SlaveMode終了;
+    :SlaveMode finish;
 
     note right
     slvChangeMode
     end note
 
-    :切断処理;
+    :Disconnect;
 
     note right
     BCAPClient.controller_disconnect
@@ -408,7 +396,6 @@ bcapslaveの制御手順概要
 
     @enduml
 
-------
 
 :code:`m_bcapclient.robot_execute(handle_robot, "slvSendFormat", 0x0000)`
 
@@ -602,9 +589,6 @@ slave mode のモード設定にはそれぞれ以下のような特徴があり
 
    エラー発生を回避できるが、指令値が空になっている場合、その場に停止使用と動作するので、slavemoveの
    動作速度が安定しない。（かくかくした動作になる。）
-
-
-------
 
 
 エラー処理

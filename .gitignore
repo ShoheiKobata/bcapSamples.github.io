@@ -9,5 +9,4 @@ vendor/
 
 .vscode
 
-
-.github/
+build/

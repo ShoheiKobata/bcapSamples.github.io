@@ -14,7 +14,6 @@
 
 デンソーウェーブ ロボットユーザーズマニュアル : https://www.fa-manuals.denso-wave.com/jp/select.php 
 
------
 
 コマンドの引数について
 ===============================
@@ -31,7 +30,6 @@ RC8プロバイダユーザーズガイド : https://www.fa-manuals.denso-wave.c
 
 RC9プロバイダユーザーズガイド : https://www.fa-manuals.denso-wave.com/subfolder/jp/RC9/img/010328/RC9_ProvGuide_ja.pdf 
 
------
 
 bcapの仕様について
 ===============================
