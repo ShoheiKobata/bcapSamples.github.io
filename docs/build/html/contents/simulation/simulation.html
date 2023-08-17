@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>8. シミュレーションについて &mdash; bcap_sample  ドキュメント</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/my_theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="検索" href="../../search.html" />
+    <link rel="next" title="9. python" href="../python/python.html" />
+    <link rel="prev" title="7. 参考ドキュメント" href="../about_bcap/references.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            bcap_sample
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">目次:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/quickstart.html">1. Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setting/setting.html">2. Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about_bcap/overview.html">3. b-capについて</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about_bcap/aboutorin.html">4. ORiNについて</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about_bcap/bcap_vs_orin.html">5. b-CAPとORiNの比較</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about_bcap/bcapslavemove.html">6. b-cap slave move</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about_bcap/references.html">7. 参考ドキュメント</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">8. シミュレーションについて</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">8.1. 必要なソフトウェア</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">8.2. 必要なライセンス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">8.3. シミュレーション方法の差分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">8.4. 準備</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6">8.4.1. 共通の設定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wincaps-vrc-kernel">8.4.2. wincaps + VRC Kernel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vrc-professional">8.4.3. VRC Professional</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../python/python.html">9. python</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">bcap_sample</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">8. </span>シミュレーションについて</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/contents/simulation/simulation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1><span class="section-number">8. </span>シミュレーションについて<a class="headerlink" href="#id1" title="この見出しへのパーマリンク"></a></h1>
+<p>b-cap通信を使用したソフトウェアの動作確認をするために,実機へ接続することができます.
+シミュレーションを使用して,PC上のロボットコントローラシミュレータに接続し,通信確認をすることが可能です.
+このページではシミュレーションへb-cap通信を使用したアプリケーションでの接続のためのシミュレーション環境構築について説明します.</p>
+<section id="id2">
+<h2><span class="section-number">8.1. </span>必要なソフトウェア<a class="headerlink" href="#id2" title="この見出しへのパーマリンク"></a></h2>
+<ul class="simple">
+<li><p>WINCAPSⅢ</p></li>
+<li><p>ORiN2 SDK (デンソー製品版 以上のライセンス)</p></li>
+<li><p>VRC</p></li>
+</ul>
+<p>※ 上記のソフトウェアは Windows のみ実行可能です.  つまり,ロボットのシミュレーションをする場合, windows PCが必須になります.</p>
+</section>
+<section id="id3">
+<h2><span class="section-number">8.2. </span>必要なライセンス<a class="headerlink" href="#id3" title="この見出しへのパーマリンク"></a></h2>
+<ol class="arabic">
+<li><p>WINCAPSⅢ + VRC Kernel</p>
+<blockquote>
+<div><p>WINCAPSⅢでロボットやロボットコントローラの状態を確認します. VRC Kernelでロボットやロボットコントローラの状況をエミュレーションします.</p>
+<p class="plantuml">
+<img src="../../_images/plantuml-382ac9ed47a784e4af2d63b264d074922a489692.png" alt="&#64;startuml
+node &quot;PC&quot; as PC  {
+    frame &quot;VRC kernel&quot; as VRC {
+        component &quot;b-cap Listener&quot; as BcapListener
+        component &quot;Controller&quot; as ctrl
+        component &quot;RobotMotion&quot; as rob
+
+        BcapListener -r- ctrl
+        ctrl -do- rob
+
+    }
+    interface bcap
+    frame &quot;Your App&quot; as App{
+        component &quot;bcap client&quot; as bcapclient
+    }
+    frame &quot;WINCPAS III&quot; as wincaps
+
+    bcap -- BcapListener
+    bcapclient -- bcap
+    VRC -- wincaps
+
+    note top of wincaps: View
+    note bottom of VRC: Calcrate and emuration
+}
+
+&#64;enduml"/>
+</p>
+</div></blockquote>
+</li>
+<li><p>VRC Professional</p>
+<blockquote>
+<div><p>VRC Professionalを使用することでVRC TP + VRC Kernel でロボットやロボットコントローラの状態を確認します.
+VRC TP は PC上で仮想のTP(ティーチングペンダント)を表示するソフトウェアです. ロボットやロボットコントローラの状態を表示します.
+VRC Kernelでロボットやロボットコントローラの状況をエミュレーションします.</p>
+<p class="plantuml">
+<img src="../../_images/plantuml-a8f8809bcac9fbeb0e09db0ef8b01e9463abe880.png" alt="&#64;startuml
+node &quot;PC&quot; as PC  {
+    frame &quot;VRC kernel&quot; as VRC {
+        component &quot;b-cap Listener&quot; as BcapListener
+        component &quot;Controller&quot; as ctrl
+        component &quot;RobotMotion&quot; as rob
+
+        BcapListener -r- ctrl
+        ctrl -do- rob
+
+    }
+    interface bcap
+    frame &quot;Your App&quot; as App{
+        component &quot;bcap client&quot; as bcapclient
+    }
+    frame &quot;VRC TP&quot; as VRCTP
+
+    bcap -- BcapListener
+    bcapclient -- bcap
+    VRC -- VRCTP
+
+    note top of VRCTP: View
+    note bottom of VRC: Calcrate and emuration
+}
+
+&#64;enduml"/>
+</p>
+</div></blockquote>
+</li>
+<li><p>windows 以外のOSのPCを使用する場合,</p>
+<blockquote>
+<div><p>ロボットシミュレーションソフトウェアはWindowsPCでのみ実行可能です. よって,Windows以外でb-capクライアントアプリケーションを構築,実行する場合,
+シミュレーションへ接続する場合,別のWindowsPCが必要になります.</p>
+<p class="plantuml">
+<img src="../../_images/plantuml-8f46afb9f847d4aad863860831d7141b2ad358ca.png" alt="&#64;startuml
+node &quot;PC&quot; as PC  {
+    frame &quot;Your App&quot; as App{
+        component &quot;bcap client&quot; as bcapclient
+    }
+}
+note left of PC: not windows os pc
+interface bcap
+
+node &quot;windows PC&quot; as winPC  {
+    frame &quot;VRC kernel&quot; as VRC {
+        component &quot;b-cap Listener&quot; as BcapListener
+        component &quot;Controller&quot; as ctrl
+        component &quot;RobotMotion&quot; as rob
+        BcapListener -r- ctrl
+        ctrl -do- rob
+    }
+    frame &quot;VRC TP&quot; as VRCTP
+
+    note top of VRCTP: View
+    note bottom of VRC: Calcrate and emuration
+}
+bcap -- BcapListener
+bcapclient -- bcap
+VRC -- VRCTP
+
+&#64;enduml"/>
+</p>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="id4">
+<h2><span class="section-number">8.3. </span>シミュレーション方法の差分<a class="headerlink" href="#id4" title="この見出しへのパーマリンク"></a></h2>
+<p>シミュレーション方法によって操作可能な範囲が異なります. 自作アプリケーションを接続する際に
+使用する可能性の高い項目を抜粋して,操作可能かどうかの差分を下の表にしています.</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>項目</p></td>
+<td><p>wincaps+VRC Kernel</p></td>
+<td><p>VRC Pro</p></td>
+</tr>
+<tr class="row-even"><td><p>手動操作</p></td>
+<td><p>[ ]</p></td>
+<td><p>[✓]</p></td>
+</tr>
+<tr class="row-odd"><td><p>プログラム起動</p></td>
+<td><p>[✓]</p></td>
+<td><p>[✓]</p></td>
+</tr>
+<tr class="row-even"><td><p>モータON</p></td>
+<td><p>[✓]</p></td>
+<td><p>[✓]</p></td>
+</tr>
+<tr class="row-odd"><td><p>非常停止</p></td>
+<td><p>[ ]</p></td>
+<td><p>[✓]</p></td>
+</tr>
+<tr class="row-even"><td><p>モード切り替え</p></td>
+<td><p>[ ]</p></td>
+<td><p>[✓]</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id5">
+<h2><span class="section-number">8.4. </span>準備<a class="headerlink" href="#id5" title="この見出しへのパーマリンク"></a></h2>
+<p>wincaps + VRC Kernel , VRC Professional で操作方法が異なります.</p>
+<section id="id6">
+<h3><span class="section-number">8.4.1. </span>共通の設定<a class="headerlink" href="#id6" title="この見出しへのパーマリンク"></a></h3>
+<p>VRCソフトウェアに同梱されているドキュメント, VRC_Users_Guide_ja.pdf ないの [3.4.2. ORiN2 インターフェイスを介した通信]
+の内容を実施します.</p>
+<ol class="arabic simple">
+<li><p>bCapService で <strong>サービス</strong> として登録する．</p></li>
+</ol>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Windows のコマンドプロンプトを管理者権限で起動する</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sc.exe</span> <span class="pre">create</span> <span class="pre">bCapService</span> <span class="pre">binpath=</span> <span class="pre">“&lt;パス&gt;¥bCapService”</span></code> を入力してサービス登録する</p></li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>bCapConfig でbCAP サービスの初期設定を行う．</p></li>
+</ol>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>bCapConfig.exe を管理者権限で起動する</p></li>
+<li><p>[File]メニュー-[Import…]を選択し, rc8_bcap_cnf.xml を開く</p></li>
+<li><p>[File]メニュー-[Save]を実行する. ※bCAP サービスの初期設定は変更しない限り，再度実行する必要はありません</p></li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>bCapConfig でbCAP サービスの開始する．</p></li>
+</ol>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>bCapConfig.exe を管理者権限で起動する</p></li>
+<li><p>[Action]メニュー-[Service Start]を実行する.この時, bCapService がbCAP サーバーとして起動される</p></li>
+</ol>
+</div></blockquote>
+<p>ロボットシミュレーションにb-capで接続をする場合,必ず,b-cap Serviceが実行していないといけません.</p>
+</section>
+<section id="wincaps-vrc-kernel">
+<h3><span class="section-number">8.4.2. </span>wincaps + VRC Kernel<a class="headerlink" href="#wincaps-vrc-kernel" title="この見出しへのパーマリンク"></a></h3>
+<p>wincaps + VRC Kernelでシミュレーション環境を動作させる方法</p>
+<ul class="simple">
+<li><p>bCapConfig でbCAP サービスの開始します</p></li>
+<li><p>WINCAPSⅢで任意のプロジェクトデータを開きます。</p></li>
+<li><p>WINCAPSⅢをシミュレーションモードへ移行します。</p></li>
+<li><p>作成したb-capクライアントアプリケーションを起動する. 接続,操作を開始します.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>シミュレーションモードについて</p>
+<div class="line-block">
+<div class="line">必ずb-capクライアントアプリケーションを接続する前に必ず、シミュレーションモードにしてください。</div>
+<div class="line">順序が変わるとb-capクライアントアプリケーションから操作した情報がWINCPASⅢで表示されない場合があります。</div>
+</div>
+</div>
+</section>
+<section id="vrc-professional">
+<h3><span class="section-number">8.4.3. </span>VRC Professional<a class="headerlink" href="#vrc-professional" title="この見出しへのパーマリンク"></a></h3>
+<p>VRC Pro でシミュレーション環境を動作させる方法</p>
+<p>ロボットプロジェクトデータ</p>
+<p>VRCソフトウェアのインストーラの <code class="docutils literal notranslate"><span class="pre">VRC_V****\SamplePrj</span></code> 内にロボットのプロジェクトデータが格納されています.
+ロボットのプロジェクトデータがない場合,このプロジェクトデータを使用してください.</p>
+<ul class="simple">
+<li><p>bCapConfig でbCAP サービスの開始します。</p></li>
+<li><p>VRC TP を起動します.  デフォルトパス <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)\DENSO</span> <span class="pre">ROBOTICS\VRC\TP\Bin\TP.exe</span></code></p></li>
+<li><p>VRC TPが起動し,ロボットプロジェクトデータを入力する画面が表示される.</p></li>
+<li><p>VRC TP画面でロボットプロジェクトデータ(例: <code class="docutils literal notranslate"><span class="pre">VRC_V2200\SamplePrj\VS-050A3-A\VS-050A3-A.WPJ</span></code>)を選択し,起動する.</p></li>
+<li><p>VRC TP画面が立ち上がる</p></li>
+<li><p>作成したb-capクライアントアプリケーションを起動する. 接続,操作を開始します.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../about_bcap/references.html" class="btn btn-neutral float-left" title="7. 参考ドキュメント" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../python/python.html" class="btn btn-neutral float-right" title="9. python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, densowave.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

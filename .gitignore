@@ -8,5 +8,4 @@ vendor/
 .mypy_cache
 
 .vscode
-
-build/
+.venv
